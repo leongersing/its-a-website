@@ -1,2 +1,44 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+The following application is part of the CodeMash 2010 Precompiler event. 
+We are using this time to have a full day to construct a simple but useful way
+to communicate information about the conference to the organizers, speakers and 
+sponsors. 
+
+In this agile workshop we're using the following technologies and methodologies 
+to make this happen. If you have any questions please contact CodeMash conference 
+coordinators or Leon Gersing (leon@edgecase.com) who will be acting Agile Coach 
+for the precompiler event. 
+
+  Site:         Ruby on Rails (see /app)
+  Testing:      RSpec + Cucumber (see /features and /spec)
+  Gems:         TBD
+  Host:         Heroku.com
+  Source:       Github.com
+  CI:           RunCodeRun.com
+  Database:     Postgresql
+  Methodology:  Agile - Kanban board
+  Point Scale:  1..3 #=> 1: 30 min, 2: 60min, 3: 90min
+
+Event Schedule: 
+
+  8:00  :         Iteration 0pen - First Standup
+  10:00 :         Iteration Close0/Open1 - Standup
+  12:00 :         Iteration Close1/Open2 - Standup
+  12:15 :         Lunch (optional working lunch)
+  2:00  :         Iteration Close2/Open3 - Standup
+  4:00  :         Iteration Close3
+  4:15  :         Retrospective 
+  
+After the time is up, if folks are interested in continuing work on the conference 
+application they are welcome to continue to iterate via Pivitoltracker.com where 
+they will have access to the backlog. 
+
+While we will have a contingency plan in place for the change that we will not make our
+timeline to launch we are operating under the assumption that we're building a production 
+ready application for use by the conference attendees beginning the day after the precompiler concludes. 
+
+There will be more information available during the event so stop by if you're interested 
+in helping out, learning from your peers and building something together. 
+
+Leon Gersing
+Software Artisan, EdgeCase LLC (Columbus, OH)
+leongersing.com
