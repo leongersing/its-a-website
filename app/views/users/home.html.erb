@@ -1,0 +1,14 @@
+<% if logged_in? %>
+<h2>You are logged in as <%= current_user.name %></h2>
+<% if current_user.facebook_user? %>
+<fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+<p><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'>Logout</a></p>
+<% else %>
+<p>why don't you connect with your facebook account</p>
+<%= fb_login_button('window.location = "/users/link_user_accounts";')%>
+<p><%= link_to 'Logout', logout_path%></p>
+<% end %>
+<% else %>
+<h2>You are not logged in!</h2>
+<p><%= link_to 'Signup', signup_path%> or <%= link_to 'Login', login_path%></p>
+<% end %>

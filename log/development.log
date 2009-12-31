@@ -1,0 +1,3454 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (13.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (10.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateConferences (20091230210455)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "conferences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "starts_on" datetime, "ends_on" datetime, "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091230210455')[0m
+Migrating to CreateUsers (20091230215212)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091230215212')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("conferences")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateConferences (20091230210455)
+Migrating to CreateUsers (20091230215212)
+Migrating to AddUsersFb (20091230215613)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (11.9ms)[0m   [0mALTER TABLE "users" ADD "fb_user_id" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "email_hash" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091230215613')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("conferences")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 18:02:36) [GET]
+
+NoMethodError (undefined method `set_facebook_session' for #<UsersController:0x0000010219a870>):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (94.2ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 18:04:35) [GET]
+
+NoMethodError (undefined method `set_facebook_session' for #<UsersController:0x0000010235b590>):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (69.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 18:07:14) [GET]
+
+NoMethodError (undefined method `set_facebook_session' for #<UsersController:0x00000102cc0e30>):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (69.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 19:13:34) [GET]
+Rendering template within layouts/application
+Rendering users/home
+Completed in 69ms (View: 67, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:13:42) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 32ms (View: 23, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:42) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:42) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:42) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:42) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:13:42) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-30 19:14:12) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:14:12) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:14:12) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:14:12) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:14:12) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:14:12) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 19:15:14) [GET]
+Rendering template within layouts/application
+Rendering users/home
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:15) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:15) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:15) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:15) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:15) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 19:15:32) [GET]
+Rendering template within layouts/application
+Rendering users/home
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:32) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:32) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:32) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:32) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:32) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:15:34) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:15:34) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:17:18) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:17:18) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:17:18) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:17:18) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:17:18) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:17:18) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:19:01) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 19:19:40) [GET]
+Rendering template within layouts/application
+Rendering users/home
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:40) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:40) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:40) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:40) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:40) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 19:19:47) [GET]
+Rendering template within layouts/application
+Rendering users/home
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:47) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:47) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:47) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:47) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:19:47) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:20:01) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:20:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:20:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:20:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:20:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:20:01) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:35:57) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:35:57) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:35:57) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:35:57) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:35:57) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:35:57) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:30) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:30) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:30) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:30) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:30) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:30) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:41) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:43) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:44) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:44) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:44) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:44) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:44) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:45) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:36:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:38:53) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:53) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:53) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:53) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:53) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:53) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:38:59) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:59) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:59) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:59) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:59) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:38:59) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 19:41:46) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+Completed in 103ms (View: 101, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:46) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:41:52) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:52) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:52) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:52) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:52) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:41:52) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:47:18) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering users/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:47:21) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering users/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:47:48) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:47:49) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:47:49) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:47:49) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:47:49) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:47:49) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:48:30) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:48:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:48:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:48:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:48:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:48:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:49:24) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 94ms (View: 74, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:24) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:24) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:24) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:24) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:24) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:49:36) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:36) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:36) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:36) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:36) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:36) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:49:43) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:43) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:43) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:43) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:43) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:43) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:49:48) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:48) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:48) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:48) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:49) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:49) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:49:55) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:55) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:55) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:55) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:49:55) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 19:50:23) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 51ms (View: 41, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:50:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:50:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:50:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:50:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 19:50:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:38:26) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:26) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:26) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:26) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:26) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:26) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:38:31) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:38:33) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:33) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:33) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:33) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:33) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:38:33) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:41:31) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 109ms (View: 99, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-30 20:42:37) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-30 20:43:09) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 40ms (View: 38, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:09) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:09) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:09) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:09) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:09) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 20:43:14) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:14) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:14) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:14) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:14) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:14) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:16) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:16) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:16) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:16) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:16) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:16) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:20) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:20) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:20) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:20) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:20) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:20) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:22) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 52ms (View: 44, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:22) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:22) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:22) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:22) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:22) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:22) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:22) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 21ms (View: 7, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 63ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:23) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:27) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:28) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:28) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:28) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:28) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:28) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:31) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:31) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:35) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:35) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:35) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:35) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:35) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:35) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:41) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/prototype.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/effects.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/controls.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/dragdrop.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-30 20:43:41) [GET]
+  Parameters: {"1259438008"=>nil}
+
+ActionController::RoutingError (No route matches "/application.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:43:51) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 51ms (View: 41, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:47:30) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-30 20:49:54) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#link_user_accounts (for 127.0.0.1 at 2009-12-30 20:49:56) [GET]
+  Parameters: {"controller"=>"users", "action"=>"link_user_accounts"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."fb_user_id" = 574101921) LIMIT 1[0m
+**Warning**, Attempt to set non-attribute: school_type (0) {"name"=>"Ithaca College", "year"=>"2000", "concentrations"=>["Musical Theater"], "degree"=>"", "school_type"=>"College"}
+facebook.users.getInfo (2.06307983398438) fields = status,political,pic_small,name,quotes,is_app_user,tv,profile_update_time,meeting_sex,hs_info,timezone,relationship_status,hometown_location,about_me,wall_count,significant_other_id,pic_big,music,work_history,sex,religion,notes_count,activities,pic_square,movies,has_added_app,education_history,birthday,birthday_date,first_name,meeting_for,last_name,interests,current_location,pic,books,affiliations,locale,profile_url,proxied_email,email_hashes,allowed_restrictions,pic_with_logo,pic_big_with_logo,pic_small_with_logo,pic_square_with_logo,online_presence,verified,profile_blurb,username,website,is_blocked,family, uids = 574101921
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email_hash" IN (NULL)) LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("login", "name", "email", "crypted_password", "salt", "created_at", "updated_at", "remember_token", "remember_token_expires_at", "fb_user_id", "email_hash") VALUES('facebooker_574101921', 'Leon Gersing', '', NULL, NULL, '2009-12-31 01:49:58', '2009-12-31 01:49:58', NULL, NULL, 574101921, NULL)[0m
+facebook.connect.registerUsers (0.322780847549438) accounts = [{"account_id":1,"email_hash":"0_d41d8cd98f00b204e9800998ecf8427e"}]
+  [4;35;1mUser Update (0.8ms)[0m   [0mUPDATE "users" SET "name" = 'Leon Gersing', "login" = 'facebooker_574101921', "email" = '', "fb_user_id" = 574101921, "created_at" = '2009-12-31 01:49:58', "updated_at" = '2009-12-31 01:49:59', "email_hash" = '0_d41d8cd98f00b204e9800998ecf8427e' WHERE "id" = 1[0m
+facebook.connect.registerUsers (0.318145036697388) accounts = [{"account_id":1,"email_hash":"0_d41d8cd98f00b204e9800998ecf8427e"}]
+Redirected to http://localhost:3000/
+Completed in 2759ms (DB: 2) | 302 Found [http://localhost/users/link_user_accounts]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 20:49:59) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."fb_user_id" = 574101921) LIMIT 1[0m
+Completed in 21ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-12-30 20:50:33) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"destroy"}
+Redirected to http://localhost:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 20:50:33) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-30 20:50:36) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#link_user_accounts (for 127.0.0.1 at 2009-12-30 20:50:51) [GET]
+  Parameters: {"controller"=>"users", "action"=>"link_user_accounts"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."fb_user_id" = 574101921) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/users/link_user_accounts]
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-30 20:50:52) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/]
