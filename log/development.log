@@ -3795,3 +3795,535 @@ WARNING: Can't mass-assign these protected attributes: login, email
   [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091230215613')[0m
   [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091230210455')[0m
   [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091230215212')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:07:56) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+
+ActionView::TemplateError (undefined method `find_by_fb_user' for #<Class:0x00000102b2c6b0>) on line #1 of app/views/users/home.html.erb:
+1: <% if logged_in? %>
+2: <h2>You are logged in as <%= current_user.name %></h2>
+3: <% if current_user.facebook_user? %>
+4: <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+
+    lib/authenticated_system.rb:23:in `login_from_fb'
+    lib/authenticated_system.rb:12:in `current_user'
+    lib/authenticated_system.rb:6:in `logged_in?'
+    (eval):2:in `logged_in?'
+    app/views/users/home.html.erb:1
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (132.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (200)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-31 14:08:12) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-31 14:08:12) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery-ui.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-31 14:08:12) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jrails.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-31 14:08:16) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-31 14:08:17) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery-ui.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+  [4;35;1mSQL (1.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-31 14:08:17) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jrails.js" with {:method=>:get, :canvas=>false}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (200)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-31 14:16:30) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 45ms (View: 43, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-31 14:17:34) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-12-31 14:17:40) [POST]
+  Parameters: {"authenticity_token"=>"vqW+7YmMVCdzsunWbCIcKL8B/ZMhh0LmxibArF6XmFU=", "login"=>"", "password"=>"[FILTERED]", "commit"=>"Log in", "controller"=>"sessions", "action"=>"create"}
+Failed login for '' from 127.0.0.1 at 2009-12-31 19:17:40 UTC
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:19:37) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+
+ActionView::TemplateError (undefined method `find_by_fb_user' for #<Class:0x00000102f2df90>) on line #1 of app/views/users/home.html.erb:
+1: <% if logged_in? %>
+2: <h2>You are logged in as <%= current_user.name %></h2>
+3: <% if current_user.facebook_user? %>
+4: <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+
+    lib/authenticated_system.rb:23:in `login_from_fb'
+    lib/authenticated_system.rb:12:in `current_user'
+    lib/authenticated_system.rb:6:in `logged_in?'
+    (eval):2:in `logged_in?'
+    app/views/users/home.html.erb:1
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (92.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (200)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:19:42) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW TABLES[0m
+
+ActionView::TemplateError (undefined method `find_by_fb_user' for #<Class:0x000001043987c0>) on line #1 of app/views/users/home.html.erb:
+1: <% if logged_in? %>
+2: <h2>You are logged in as <%= current_user.name %></h2>
+3: <% if current_user.facebook_user? %>
+4: <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+
+    lib/authenticated_system.rb:23:in `login_from_fb'
+    lib/authenticated_system.rb:12:in `current_user'
+    lib/authenticated_system.rb:6:in `logged_in?'
+    (eval):2:in `logged_in?'
+    app/views/users/home.html.erb:1
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (88.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (200)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-31 14:19:53) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 25ms (View: 13, DB: 2) | 200 OK [http://localhost/signup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-31 14:20:07) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:20:12) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+
+ActionView::TemplateError (undefined method `find_by_fb_user' for #<Class:0x00000102f980a0>) on line #1 of app/views/users/home.html.erb:
+1: <% if logged_in? %>
+2: <h2>You are logged in as <%= current_user.name %></h2>
+3: <% if current_user.facebook_user? %>
+4: <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+
+    lib/authenticated_system.rb:23:in `login_from_fb'
+    lib/authenticated_system.rb:12:in `current_user'
+    lib/authenticated_system.rb:6:in `logged_in?'
+    (eval):2:in `logged_in?'
+    app/views/users/home.html.erb:1
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (86.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (200)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:22:57) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`fb_user_id` = 574101921) LIMIT 1[0m
+facebook.users.getInfo (0) Facebooker::Session::SessionExpired: Session key invalid or no longer valid: fields = status,political,pic_small,name,quotes,is_app_user,tv,profile_update_time,meeting_sex,hs_info,timezone,relationship_status,hometown_location,about_me,wall_count,significant_other_id,pic_big,music,work_history,sex,religion,notes_count,activities,pic_square,movies,has_added_app,education_history,birthday,birthday_date,first_name,meeting_for,last_name,interests,current_location,pic,books,affiliations,locale,profile_url,proxied_email,email_hashes,allowed_restrictions,pic_with_logo,pic_big_with_logo,pic_small_with_logo,pic_square_with_logo,online_presence,verified,profile_blurb,username,website,is_blocked,family, uids = 574101921
+
+ActionView::TemplateError (Session key invalid or no longer valid) on line #1 of app/views/users/home.html.erb:
+1: <% if logged_in? %>
+2: <h2>You are logged in as <%= current_user.name %></h2>
+3: <% if current_user.facebook_user? %>
+4: <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="small" > </fb:profile-pic>
+
+    facebooker (1.0.58) lib/facebooker/parser.rb:640:in `process'
+    facebooker (1.0.58) lib/facebooker/parser.rb:36:in `parse'
+    facebooker (1.0.58) lib/facebooker/service.rb:66:in `post'
+    facebooker (1.0.58) lib/facebooker/session.rb:638:in `post_without_logging'
+    facebooker (1.0.58) lib/facebooker/session.rb:649:in `block in post'
+    facebooker (1.0.58) lib/facebooker/logging.rb:20:in `block in log_fb_api'
+    facebooker (1.0.58) lib/facebooker/logging.rb:20:in `log_fb_api'
+    facebooker (1.0.58) lib/facebooker/session.rb:648:in `post'
+    facebooker (1.0.58) lib/facebooker/models/user.rb:208:in `populate'
+    facebooker (1.0.58) lib/facebooker/model.rb:35:in `block (2 levels) in populating_attr_reader'
+    app/models/user.rb:31:in `find_by_fb_user'
+    lib/authenticated_system.rb:23:in `login_from_fb'
+    lib/authenticated_system.rb:12:in `current_user'
+    lib/authenticated_system.rb:6:in `logged_in?'
+    (eval):2:in `logged_in?'
+    app/views/users/home.html.erb:1
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (145.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (200)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:23:09) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`fb_user_id` = 574101921) LIMIT 1[0m
+facebook.users.getInfo (0) Facebooker::Session::SessionExpired: Session key invalid or no longer valid: fields = status,political,pic_small,name,quotes,is_app_user,tv,profile_update_time,meeting_sex,hs_info,timezone,relationship_status,hometown_location,about_me,wall_count,significant_other_id,pic_big,music,work_history,sex,religion,notes_count,activities,pic_square,movies,has_added_app,education_history,birthday,birthday_date,first_name,meeting_for,last_name,interests,current_location,pic,books,affiliations,locale,profile_url,proxied_email,email_hashes,allowed_restrictions,pic_with_logo,pic_big_with_logo,pic_small_with_logo,pic_square_with_logo,online_presence,verified,profile_blurb,username,website,is_blocked,family, uids = 574101921
+
+ActionView::TemplateError (Session key invalid or no longer valid) on line #1 of app/views/users/home.html.erb:
+1: <% if logged_in? %>
+2: <h2>You are logged in as <%= current_user.name %></h2>
+3: <% if current_user.facebook_user? %>
+4: <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="small" > </fb:profile-pic>
+
+    facebooker (1.0.58) lib/facebooker/parser.rb:640:in `process'
+    facebooker (1.0.58) lib/facebooker/parser.rb:36:in `parse'
+    facebooker (1.0.58) lib/facebooker/service.rb:66:in `post'
+    facebooker (1.0.58) lib/facebooker/session.rb:638:in `post_without_logging'
+    facebooker (1.0.58) lib/facebooker/session.rb:649:in `block in post'
+    facebooker (1.0.58) lib/facebooker/logging.rb:20:in `block in log_fb_api'
+    facebooker (1.0.58) lib/facebooker/logging.rb:20:in `log_fb_api'
+    facebooker (1.0.58) lib/facebooker/session.rb:648:in `post'
+    facebooker (1.0.58) lib/facebooker/models/user.rb:208:in `populate'
+    facebooker (1.0.58) lib/facebooker/model.rb:35:in `block (2 levels) in populating_attr_reader'
+    app/models/user.rb:31:in `find_by_fb_user'
+    lib/authenticated_system.rb:23:in `login_from_fb'
+    lib/authenticated_system.rb:12:in `current_user'
+    lib/authenticated_system.rb:6:in `logged_in?'
+    (eval):2:in `logged_in?'
+    app/views/users/home.html.erb:1
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (146.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (200)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-31 14:24:01) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 44ms (View: 42, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#link_user_accounts (for 127.0.0.1 at 2009-12-31 14:24:11) [GET]
+  Parameters: {"controller"=>"users", "action"=>"link_user_accounts"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`fb_user_id` = 574101921) LIMIT 1[0m
+facebook.users.getInfo (0) Facebooker::Session::SessionExpired: Session key invalid or no longer valid: fields = status,political,pic_small,name,quotes,is_app_user,tv,profile_update_time,meeting_sex,hs_info,timezone,relationship_status,hometown_location,about_me,wall_count,significant_other_id,pic_big,music,work_history,sex,religion,notes_count,activities,pic_square,movies,has_added_app,education_history,birthday,birthday_date,first_name,meeting_for,last_name,interests,current_location,pic,books,affiliations,locale,profile_url,proxied_email,email_hashes,allowed_restrictions,pic_with_logo,pic_big_with_logo,pic_small_with_logo,pic_square_with_logo,online_presence,verified,profile_blurb,username,website,is_blocked,family, uids = 574101921
+
+Facebooker::Session::SessionExpired (Session key invalid or no longer valid):
+  facebooker (1.0.58) lib/facebooker/parser.rb:640:in `process'
+  facebooker (1.0.58) lib/facebooker/parser.rb:36:in `parse'
+  facebooker (1.0.58) lib/facebooker/service.rb:66:in `post'
+  facebooker (1.0.58) lib/facebooker/session.rb:638:in `post_without_logging'
+  facebooker (1.0.58) lib/facebooker/session.rb:649:in `block in post'
+  facebooker (1.0.58) lib/facebooker/logging.rb:20:in `block in log_fb_api'
+  facebooker (1.0.58) lib/facebooker/logging.rb:20:in `log_fb_api'
+  facebooker (1.0.58) lib/facebooker/session.rb:648:in `post'
+  facebooker (1.0.58) lib/facebooker/models/user.rb:208:in `populate'
+  facebooker (1.0.58) lib/facebooker/model.rb:35:in `block (2 levels) in populating_attr_reader'
+  app/models/user.rb:31:in `find_by_fb_user'
+  lib/authenticated_system.rb:23:in `login_from_fb'
+  lib/authenticated_system.rb:12:in `current_user'
+  app/controllers/users_controller.rb:30:in `link_user_accounts'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (86.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (200)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (94.8ms)[0m   [0mCREATE TABLE `conferences` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `starts_on` datetime, `ends_on` datetime, `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (218.3ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(40), `name` varchar(100) DEFAULT '', `email` varchar(100), `crypted_password` varchar(40), `salt` varchar(40), `created_at` datetime, `updated_at` datetime, `remember_token` varchar(40), `remember_token_expires_at` datetime, `fb_user_id` int(11), `email_hash` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (103.6ms)[0m   [0;1mCREATE UNIQUE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (105.6ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (111.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091230215613')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20091230210455')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20091230215212')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:41:00) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+Completed in 94ms (View: 78, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:42:09) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`fb_user_id` = 574101921) LIMIT 1[0m
+facebook.users.getInfo (0) Facebooker::Session::SessionExpired: Session key invalid or no longer valid: fields = status,political,pic_small,name,quotes,is_app_user,tv,profile_update_time,meeting_sex,hs_info,timezone,relationship_status,hometown_location,about_me,wall_count,significant_other_id,pic_big,music,work_history,sex,religion,notes_count,activities,pic_square,movies,has_added_app,education_history,birthday,birthday_date,first_name,meeting_for,last_name,interests,current_location,pic,books,affiliations,locale,profile_url,proxied_email,email_hashes,allowed_restrictions,pic_with_logo,pic_big_with_logo,pic_small_with_logo,pic_square_with_logo,online_presence,verified,profile_blurb,username,website,is_blocked,family, uids = 574101921
+
+ActionView::TemplateError (Session key invalid or no longer valid) on line #1 of app/views/users/home.html.erb:
+1: <% if logged_in? %>
+2: <h2>You are logged in as <%= current_user.name %></h2>
+3: <% if current_user.facebook_user? %>
+4: <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="small" > </fb:profile-pic>
+
+    facebooker (1.0.58) lib/facebooker/parser.rb:640:in `process'
+    facebooker (1.0.58) lib/facebooker/parser.rb:36:in `parse'
+    facebooker (1.0.58) lib/facebooker/service.rb:66:in `post'
+    facebooker (1.0.58) lib/facebooker/session.rb:638:in `post_without_logging'
+    facebooker (1.0.58) lib/facebooker/session.rb:649:in `block in post'
+    facebooker (1.0.58) lib/facebooker/logging.rb:20:in `block in log_fb_api'
+    facebooker (1.0.58) lib/facebooker/logging.rb:20:in `log_fb_api'
+    facebooker (1.0.58) lib/facebooker/session.rb:648:in `post'
+    facebooker (1.0.58) lib/facebooker/models/user.rb:208:in `populate'
+    facebooker (1.0.58) lib/facebooker/model.rb:35:in `block (2 levels) in populating_attr_reader'
+    app/models/user.rb:31:in `find_by_fb_user'
+    lib/authenticated_system.rb:23:in `login_from_fb'
+    lib/authenticated_system.rb:12:in `current_user'
+    lib/authenticated_system.rb:6:in `logged_in?'
+    (eval):2:in `logged_in?'
+    app/views/users/home.html.erb:1
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (107.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (200)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:42:14) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`fb_user_id` = 574101921) LIMIT 1[0m
+facebook.users.getInfo (0) Facebooker::Session::SessionExpired: Session key invalid or no longer valid: fields = status,political,pic_small,name,quotes,is_app_user,tv,profile_update_time,meeting_sex,hs_info,timezone,relationship_status,hometown_location,about_me,wall_count,significant_other_id,pic_big,music,work_history,sex,religion,notes_count,activities,pic_square,movies,has_added_app,education_history,birthday,birthday_date,first_name,meeting_for,last_name,interests,current_location,pic,books,affiliations,locale,profile_url,proxied_email,email_hashes,allowed_restrictions,pic_with_logo,pic_big_with_logo,pic_small_with_logo,pic_square_with_logo,online_presence,verified,profile_blurb,username,website,is_blocked,family, uids = 574101921
+
+ActionView::TemplateError (Session key invalid or no longer valid) on line #1 of app/views/users/home.html.erb:
+1: <% if logged_in? %>
+2: <h2>You are logged in as <%= current_user.name %></h2>
+3: <% if current_user.facebook_user? %>
+4: <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="small" > </fb:profile-pic>
+
+    facebooker (1.0.58) lib/facebooker/parser.rb:640:in `process'
+    facebooker (1.0.58) lib/facebooker/parser.rb:36:in `parse'
+    facebooker (1.0.58) lib/facebooker/service.rb:66:in `post'
+    facebooker (1.0.58) lib/facebooker/session.rb:638:in `post_without_logging'
+    facebooker (1.0.58) lib/facebooker/session.rb:649:in `block in post'
+    facebooker (1.0.58) lib/facebooker/logging.rb:20:in `block in log_fb_api'
+    facebooker (1.0.58) lib/facebooker/logging.rb:20:in `log_fb_api'
+    facebooker (1.0.58) lib/facebooker/session.rb:648:in `post'
+    facebooker (1.0.58) lib/facebooker/models/user.rb:208:in `populate'
+    facebooker (1.0.58) lib/facebooker/model.rb:35:in `block (2 levels) in populating_attr_reader'
+    app/models/user.rb:31:in `find_by_fb_user'
+    lib/authenticated_system.rb:23:in `login_from_fb'
+    lib/authenticated_system.rb:12:in `current_user'
+    lib/authenticated_system.rb:6:in `logged_in?'
+    (eval):2:in `logged_in?'
+    app/views/users/home.html.erb:1
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/Cellar/ruby/1.9.1-p376/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (104.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (200)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:42:19) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-31 14:42:24) [GET]
+  Parameters: {"controller"=>"users", "action"=>"new"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 22ms (View: 13, DB: 3) | 200 OK [http://localhost/signup]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-12-31 14:42:28) [GET]
+  Parameters: {"controller"=>"sessions", "action"=>"new"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#link_user_accounts (for 127.0.0.1 at 2009-12-31 14:43:28) [GET]
+  Parameters: {"controller"=>"users", "action"=>"link_user_accounts"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`fb_user_id` = 574101921) LIMIT 1[0m
+**Warning**, Attempt to set non-attribute: school_type (0) {"name"=>"Ithaca College", "year"=>"2000", "concentrations"=>["Musical Theater"], "degree"=>"", "school_type"=>"College"}
+facebook.users.getInfo (1.45865106582642) fields = status,political,pic_small,name,quotes,is_app_user,tv,profile_update_time,meeting_sex,hs_info,timezone,relationship_status,hometown_location,about_me,wall_count,significant_other_id,pic_big,music,work_history,sex,religion,notes_count,activities,pic_square,movies,has_added_app,education_history,birthday,birthday_date,first_name,meeting_for,last_name,interests,current_location,pic,books,affiliations,locale,profile_url,proxied_email,email_hashes,allowed_restrictions,pic_with_logo,pic_big_with_logo,pic_small_with_logo,pic_square_with_logo,online_presence,verified,profile_blurb,username,website,is_blocked,family, uids = 574101921
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email_hash` IN (NULL)) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`login`, `name`, `email`, `crypted_password`, `salt`, `created_at`, `updated_at`, `remember_token`, `remember_token_expires_at`, `fb_user_id`, `email_hash`) VALUES('facebooker_574101921', 'Leon Gersing', '', NULL, NULL, '2009-12-31 19:43:30', '2009-12-31 19:43:30', NULL, NULL, 574101921, NULL)[0m
+facebook.connect.registerUsers (0.292098045349121) accounts = [{"account_id":1,"email_hash":"0_d41d8cd98f00b204e9800998ecf8427e"}]
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `name` = 'Leon Gersing', `login` = 'facebooker_574101921', `email` = '', `fb_user_id` = 574101921, `created_at` = '2009-12-31 19:43:30', `updated_at` = '2009-12-31 19:43:30', `email_hash` = '0_d41d8cd98f00b204e9800998ecf8427e' WHERE `id` = 1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+facebook.connect.registerUsers (0.27857494354248) accounts = [{"account_id":1,"email_hash":"0_d41d8cd98f00b204e9800998ecf8427e"}]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 2052ms (DB: 5) | 302 Found [http://localhost/users/link_user_accounts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2009-12-31 14:43:30) [GET]
+  Parameters: {"controller"=>"users", "action"=>"home"}
+Rendering template within layouts/application
+Rendering users/home
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`fb_user_id` = 574101921) LIMIT 1[0m
+Completed in 71ms (View: 66, DB: 4) | 200 OK [http://localhost/]

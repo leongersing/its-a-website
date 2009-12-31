@@ -3,10 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
   <%= javascript_include_tag :defaults %>
+  <%= fb_connect_javascript_tag %>
+  <%= init_fb_connect "XFBML", :js => :jquery %>
 </head>
 <body>
+  <div id="content">
   <%= yield %>
-  <%= fb_connect_javascript_tag %>
-  <%= init_fb_connect "XFBML" %>
+  </div>
 </body>
 </html>
