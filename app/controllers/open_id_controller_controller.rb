@@ -1,0 +1,2 @@
+class OpenIDControllerController < ApplicationController
+end
