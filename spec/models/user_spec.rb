@@ -139,8 +139,10 @@ describe User do
   end
 
   it 'does not rehash password' do
-    users(:quentin).update_attributes(:login => 'quentin2')
-    User.authenticate('quentin2', 'monkey').should == users(:quentin)
+    u = users(:quentin)
+    u.update_attributes(:login => 'quentin2').should == true
+    User.authenticate('quentin2', 'monkey').should == u
+    0
   end
 
   #
