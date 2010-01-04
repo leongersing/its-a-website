@@ -16818,3 +16818,204 @@ facebook.connect.registerUsers (0.339318990707397) accounts = [{"account_id":77,
   [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE `users` SET `remember_token_expires_at` = '2010-01-14 19:11:35', `remember_token` = 'c6c7a911f6d363f964177ecea0349fe9574ab07c', `updated_at` = '2009-12-31 19:11:35' WHERE `id` = 1[0m
   [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
   [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSession Create (0.3ms)[0m   [0mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:37:41', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:37:43', '2010-01-04 19:37:43')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Create (0.2ms)[0m   [0;1mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:37:41', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:37:43', '2010-01-04 19:37:43')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSession Create (0.1ms)[0m   [0mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:37:41', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:37:43', '2010-01-04 19:37:43')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Create (0.1ms)[0m   [0;1mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:37:41', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:37:43', '2010-01-04 19:37:43')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Columns (132.7ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSession Create (0.3ms)[0m   [0mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:40:23', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:40:24', '2010-01-04 19:40:24')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Create (0.2ms)[0m   [0;1mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:40:23', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:40:24', '2010-01-04 19:40:24')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSession Create (0.1ms)[0m   [0mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:40:23', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:40:24', '2010-01-04 19:40:24')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mCategory Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `categories`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mCategory Create (0.1ms)[0m   [0mINSERT INTO `categories` (`title`, `created_at`, `updated_at`) VALUES('Ruby', '2010-01-04 19:40:24', '2010-01-04 19:40:24')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Update (0.3ms)[0m   [0;1mUPDATE `sessions` SET `category_id` = 1, `updated_at` = '2010-01-04 19:40:24' WHERE `id` = 7[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSession Create (0.2ms)[0m   [0mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:40:23', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:40:24', '2010-01-04 19:40:24')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (44.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSession Create (0.3ms)[0m   [0mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:41:29', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:41:31', '2010-01-04 19:41:31')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSpeaker Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `speakers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSpeaker Create (0.1ms)[0m   [0mINSERT INTO `speakers` (`name`, `created_at`, `updated_at`) VALUES('Jessica Suttles', '2010-01-04 19:41:31', '2010-01-04 19:41:31')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Create (0.1ms)[0m   [0;1mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:41:29', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:41:31', '2010-01-04 19:41:31')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSpeaker Create (0.1ms)[0m   [0mINSERT INTO `speakers` (`name`, `created_at`, `updated_at`) VALUES('Jessica Suttles', '2010-01-04 19:41:31', '2010-01-04 19:41:31')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Create (0.2ms)[0m   [0;1mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:41:29', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:41:31', '2010-01-04 19:41:31')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mCategory Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.1ms)[0m   [0;1mINSERT INTO `categories` (`title`, `created_at`, `updated_at`) VALUES('Ruby', '2010-01-04 19:41:31', '2010-01-04 19:41:31')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSession Update (0.3ms)[0m   [0mUPDATE `sessions` SET `category_id` = 1, `updated_at` = '2010-01-04 19:41:31' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Create (0.2ms)[0m   [0;1mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:41:29', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:41:31', '2010-01-04 19:41:31')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSession Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSession Create (0.3ms)[0m   [0mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:43:00', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:43:02', '2010-01-04 19:43:02')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSpeaker Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `speakers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSpeaker Create (0.1ms)[0m   [0mINSERT INTO `speakers` (`name`, `created_at`, `updated_at`) VALUES('Jessica Suttles', '2010-01-04 19:43:02', '2010-01-04 19:43:02')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSpeaker Update (0.2ms)[0m   [0;1mUPDATE `speakers` SET `updated_at` = '2010-01-04 19:43:02' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'speakers.session_id' in 'where clause': SELECT count(*) AS count_all FROM `speakers` WHERE (`speakers`.session_id = 5) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Create (0.2ms)[0m   [0;1mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:43:00', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:43:02', '2010-01-04 19:43:02')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSpeaker Create (0.1ms)[0m   [0mINSERT INTO `speakers` (`name`, `created_at`, `updated_at`) VALUES('Jessica Suttles', '2010-01-04 19:43:02', '2010-01-04 19:43:02')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSpeaker Update (0.2ms)[0m   [0;1mUPDATE `speakers` SET `updated_at` = '2010-01-04 19:43:02' WHERE `id` = 4[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSpeaker Create (0.1ms)[0m   [0mINSERT INTO `speakers` (`name`, `created_at`, `updated_at`) VALUES('Jessica Suttles', '2010-01-04 19:43:02', '2010-01-04 19:43:02')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSpeaker Update (0.1ms)[0m   [0;1mUPDATE `speakers` SET `updated_at` = '2010-01-04 19:43:02' WHERE `id` = 5[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'speakers.session_id' in 'where clause': SELECT count(*) AS count_all FROM `speakers` WHERE (`speakers`.session_id = 6) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Create (0.1ms)[0m   [0;1mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:43:00', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:43:02', '2010-01-04 19:43:02')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mCategory Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `categories`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mCategory Create (0.1ms)[0m   [0;1mINSERT INTO `categories` (`title`, `created_at`, `updated_at`) VALUES('Ruby', '2010-01-04 19:43:02', '2010-01-04 19:43:02')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSession Update (0.2ms)[0m   [0mUPDATE `sessions` SET `category_id` = 2, `updated_at` = '2010-01-04 19:43:02' WHERE `id` = 7[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSession Create (0.2ms)[0m   [0;1mINSERT INTO `sessions` (`title`, `description`, `start_time`, `location`, `level`, `technology`, `category_id`, `reference_data`, `created_at`, `updated_at`) VALUES('Session Title', NULL, '2010-01-04 19:43:00', 'Ballroom A', NULL, NULL, NULL, NULL, '2010-01-04 19:43:02', '2010-01-04 19:43:02')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
