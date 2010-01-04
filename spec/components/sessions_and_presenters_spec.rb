@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Sessions and Speakers" do
+describe "Sessions and Presenters" do
   context "sessions" do
     it "has one presenter" do
       user = Factory(:user, :login=>"Jessica")
@@ -31,7 +31,5 @@ describe "Sessions and Speakers" do
       session.save
       session.should be_valid
     end
-
-    it "can be rated by attendees"
-    end
+  end
 end

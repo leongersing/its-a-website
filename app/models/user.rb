@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   has_and_belongs_to_many :sessions_presented, :class_name => 'Session'
-  
+  has_many :comments
+  has_many :ratings
     
   validates_presence_of     :login
   validates_length_of       :login,   :within => 3..40

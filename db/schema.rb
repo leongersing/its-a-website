@@ -9,10 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100104203658) do
+ActiveRecord::Schema.define(:version => 20100104213137) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "session_id"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -22,6 +30,14 @@ ActiveRecord::Schema.define(:version => 20100104203658) do
     t.datetime "starts_on"
     t.datetime "ends_on"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "session_id"
+    t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
