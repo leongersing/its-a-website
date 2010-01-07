@@ -1,5 +1,5 @@
-class Session < ActiveRecord::Base
-  has_and_belongs_to_many :presenters, :class_name => 'User'
+class Presentation < ActiveRecord::Base
+  has_and_belongs_to_many :presenters
   belongs_to :category
   has_many :comments
   has_many :ratings

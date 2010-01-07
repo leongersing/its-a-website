@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
       redirect_back_or_default('/')
-      flash[:notice] = "Logged in successfully"
+      flash[:success] = "Logged in successfully"
     else
       note_failed_signin
       @login       = params[:login]
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout_killing_session!
-    flash[:notice] = "You have been logged out."
+    flash[:success] = "You have been logged out."
     redirect_back_or_default('/')
   end
 

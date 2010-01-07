@@ -12,18 +12,32 @@
   <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print">	
   <!--[if lt IE 8]><link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
   <link rel="stylesheet" href="/css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/css/app.css" type="text/css" media="screen, projection">
 </head>
 <body>
   <div class="container">
-    <h1>Symposiast.com</h1>
-    <h2 class="alt">Share your thoughts, meet other symposiasts, do something great... together.<h2>
-    <hr>
-    <div>
+    <div class="header">
+      <h1 id="site_title"><a href="/">Symposiast.com</a></h1>
+      <h2 class="alt">
+        Share your thoughts, meet other symposiasts, do something great... together.
+      <h2>
+    </div>
+    <div class="mainContent span-17 colborder">
+      <%= render_flash_messages %>
       <%= yield %>
     </div>
-    <hr>
-    <h2 class="alt">This site was built by someone just like you... at a symposium.</h2>
-    <hr>
+    <div class="sideContent span-5 last">
+      <%= render :partial=> 'shared/side_bar' %>
+    </div>
+    <br class="clear">
+    <div class="footer">
+      <h2 class="alt">
+        This site was built by someone just like you... at a symposium.
+      </h2>
+      <p>
+        MIT license. Use this site as you wish.
+      </p>
+    </div>
   </div>
 </body>
 </html>

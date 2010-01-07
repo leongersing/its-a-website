@@ -1,5 +1,5 @@
 class Rating < ActiveRecord::Base
-  belongs_to :session
+  belongs_to :presentation
   belongs_to :user
   
   def positive_count

@@ -1,0 +1,26 @@
+.header{
+  background:#333;
+  padding:10px 0 40px 0;
+}
+.header h1{
+  font-size:400%;
+}
+.header h1, h2{
+  background:#FFF;
+  margin:0 auto;
+  padding: 4px;
+}
+.mainContent, .sideContent{
+  margin:10px 0;
+}
+.footer{
+  border-top:4px solid #333;
+  text-align:right;
+}
+.header #site_title{
+  text-decoration:none;
+}
+.header #site_title a{
+  text-decoration:none;
+  color:#000;
+}

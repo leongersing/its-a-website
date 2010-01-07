@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100104213137) do
+ActiveRecord::Schema.define(:version => 20100107174552) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20100104213137) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "session_id"
+    t.integer  "presentation_id"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,15 +34,7 @@ ActiveRecord::Schema.define(:version => 20100104213137) do
     t.datetime "updated_at"
   end
 
-  create_table "ratings", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "session_id"
-    t.integer  "score"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sessions", :force => true do |t|
+  create_table "presentations", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "start_time"
@@ -55,16 +47,28 @@ ActiveRecord::Schema.define(:version => 20100104213137) do
     t.datetime "updated_at"
   end
 
-  create_table "sessions_users", :id => false, :force => true do |t|
-    t.integer  "session_id"
-    t.integer  "user_id"
+  create_table "presentations_presenters", :id => false, :force => true do |t|
+    t.integer  "presentation_id"
+    t.integer  "presenter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "speakers", :force => true do |t|
-    t.integer  "session_id"
-    t.integer  "speaker_id"
+  create_table "presenters", :force => true do |t|
+    t.string   "name"
+    t.string   "reference_data"
+    t.string   "bio"
+    t.string   "contact_info"
+    t.string   "blog_url"
+    t.string   "twitter_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "presentation_id"
+    t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

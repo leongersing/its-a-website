@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :sessions
+  has_many :presentations
 end

@@ -1,0 +1,2 @@
+class PresentersController < ApplicationController
+end

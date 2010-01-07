@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
   
-  has_and_belongs_to_many :sessions_presented, :class_name => 'Session'
+  has_and_belongs_to_many :presentations, :class_name => 'Presentation'
   has_many :comments
   has_many :ratings
     

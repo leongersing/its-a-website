@@ -1,6 +1,6 @@
-class CreateSessions < ActiveRecord::Migration
+class CreatePresentations < ActiveRecord::Migration
   def self.up
-    create_table :sessions do |t|
+    create_table :presentations do |t|
       t.string :title
       t.text :description
       t.datetime :start_time
@@ -15,6 +15,6 @@ class CreateSessions < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :sessions
+    drop_table :presentations
   end
 end
