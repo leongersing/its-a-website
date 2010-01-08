@@ -6,10 +6,10 @@ class Presentation < ActiveRecord::Base
   validates_presence_of :title, :start_time, :location
   
   def positive_ratings
-    ratings.select{|r| r.score == 1}
+    ratings.select{|r| r.score == 1}.length
   end
   
   def negative_ratings
-    ratings.select{|r| r.score == -1}
+    ratings.select{|r| r.score == -1}.length
   end
 end

@@ -1,6 +1,6 @@
 class PresentationsController < ApplicationController
   def index
-    @presentations = Presentations.upcoming
+    @presentations = Presentation.find(:all, :order=> "start_time desc")
     respond_to do |format|
       format.html
       format.js{@presentations.to_json}
@@ -9,7 +9,12 @@ class PresentationsController < ApplicationController
   end
 
   def show
-    @presentations = Presentations.find(params[:id])
+    @presentation = Presentation.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js{@presentation.to_json}
+      format.xml{@presentation.to_xml}
+    end
   end
 
   def new

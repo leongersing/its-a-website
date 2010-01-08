@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Session do
+describe Presentation do
   before(:each) do
     @valid_attributes = {
       :title => "value for title",
@@ -15,7 +15,7 @@ describe Session do
   end
 
   it "should create a new instance given valid attributes" do
-    Session.create!(@valid_attributes)
+    Presentation.create!(@valid_attributes)
   end
 
 end

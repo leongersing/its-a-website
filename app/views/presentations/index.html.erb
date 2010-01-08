@@ -1,0 +1,8 @@
+<h1> Presentations </h1>
+<ul>
+<% @presentations.each do |presentation| %>
+  <li>
+    <%= link_to presentation.title,  presentation_path(presentation)%>
+  </li>
+<% end %>
+</ul>

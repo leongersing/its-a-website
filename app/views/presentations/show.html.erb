@@ -1,0 +1,29 @@
+<h1><%=h @presentation.title %></h1>
+<p class="speaker_info">   
+  <% @presentation.presenters.each do |presenter| %>
+    <%= link_to presenter.name, presenter_path(presenter) %> &nbsp;
+  <% end %>
+</p>
+<p>
+  <%= @presentation.description %>
+</p>
+<p>The Rating! <%= "#{@presentation.positive_ratings}/#{@presentation.negative_ratings}"%></p>
+<% if logged_in? %>
+<p>
+  Rate this shit yourself: 
+  <% form_for Rating.new, :url=> up_presentation_ratings_path(@presentation) do |f| %>
+    <%= submit_tag "Rocked" %>
+  <% end -%>
+  <% form_for Rating.new, :url=> down_presentation_ratings_path(@presentation) do |f| %>
+    <%= submit_tag "Sucked" %>
+  <% end -%>
+</p>
+
+<hr>
+
+<h2>Comments</h2>
+<% @presentation.comments.each do |comment| %>
+  <p><%= comment.user.name%> said on <%= comment.create_at%>: <%= comment.body %></p>
+<% end %>
+
+<% end %>
