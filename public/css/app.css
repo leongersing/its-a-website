@@ -1,11 +1,11 @@
-.header{
+.site_header{
   background:#333;
   padding:10px 0 40px 0;
 }
-.header h1{
+.site_header h1{
   font-size:400%;
 }
-.header h1, h2{
+.site_header h1, h2{
   background:#FFF;
   margin:0 auto;
   padding: 4px;

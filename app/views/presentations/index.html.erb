@@ -1,8 +1,21 @@
 <h1> Presentations </h1>
-<ul>
+<table id="presentations" class="tablesorter">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Speaker</th>
+    <th>Start Time</th>
+    <th>Tech</th>
+  </tr>
+  </thead>
+  <tbody>
 <% @presentations.each do |presentation| %>
-  <li>
-    <%= link_to presentation.title,  presentation_path(presentation)%>
-  </li>
+    <tr>
+      <td><%= link_to presentation.title,  presentation_path(presentation)%></td>
+      <td><%= presentation.presenters.map(&:name).join(", ")%></td>
+      <td><%= presentation.start_time.strftime("%c")%></td>
+      <td><%= presentation.technology%></td>
+    </tr>
 <% end %>
-</ul>
+  </tbody>
+</table>

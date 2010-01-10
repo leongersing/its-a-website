@@ -1,7 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :presenters
   map.resources :presentations do |pres|
-    pres.resources :ratings, :collection=>{ :up => :post, :down=> :post }
+    pres.up 'up', :controller=> 'ratings', :action=>'up'
+    pres.down 'down', :controller=> 'ratings', :action=>'down'
+    pres.resources :comments, :only => :create
   end
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'

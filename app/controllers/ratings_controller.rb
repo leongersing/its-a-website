@@ -1,6 +1,5 @@
 class RatingsController < ApplicationController
-  
-  
+
   def up     
     rate_it(1)
   end
@@ -9,6 +8,7 @@ class RatingsController < ApplicationController
     rate_it(-1)
   end
   
+  private 
   def rate_it(score)
     pres = Presentation.find(params[:presentation_id])
     rating = pres.ratings.new :user => current_user,
