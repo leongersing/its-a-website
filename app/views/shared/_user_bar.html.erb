@@ -1,0 +1,8 @@
+<% unless current_user.nil? %>
+  <div id="user-bar-greeting">Logged in as <%= current_user.login -%> </div>
+  <div id="user-bar-action"  >(<%= link_to "Log out", logout_path, { :title => "Log out" }    %>)</div>
+<% else -%>
+  <div id="user-bar-greeting">Welcome fellow symposiast!</div>
+  <div id="user-bar-action"  ><%= link_to "Log in",  login_path,  { :title => "Log in" } %> /
+                               <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
+<% end -%>
