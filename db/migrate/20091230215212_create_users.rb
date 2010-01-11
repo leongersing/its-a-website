@@ -19,7 +19,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :current_login_ip                                   # optional, see Authlogic::Session::MagicColumns
       t.string    :last_login_ip                                      # optional, see Authlogic::Session::MagicColumns
     end
-
+  end
+  
   def self.down
     drop_table "users"
   end
