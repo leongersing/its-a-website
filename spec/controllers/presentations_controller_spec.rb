@@ -24,7 +24,13 @@ describe PresentationsController do
     assert_raise(ActiveRecord::RecordNotFound) do
       Presentation.find(presentation.id) 
     end
+  end
 
+  it "should list sessions" do
+    Presentation.expects(:all).returns([])
+    get :index
+    #i should check an instance var @presentations returns an empty array
+    assigns[:presentations].should == [] 
   end
 end
 
