@@ -9,3 +9,4 @@ log/
 db/*.sqlite3
 
 .eprj
+db/*.sqlite3
