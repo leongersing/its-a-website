@@ -9,3 +9,10 @@ db/*.sqlite3
 .eprj
 db/schema.rb
 nbproject/*
+
+vendor/bundler_gems/environment.rb
+vendor/bundler_gems/ruby/1.8/environment.rb
+vendor/bundler_gems/ruby/1.8/gems
+vendor/bundler_gems/ruby/1.8/doc
+vendor/bundler_gems/ruby/1.8/specifications
+bin/
