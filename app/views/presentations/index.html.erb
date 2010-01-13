@@ -1,1 +1,24 @@
-<%= render :partial => "presentation_co", :collection => @presentations %>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Start Time</th>
+      <th>Location</th>
+      <th>Level</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%@presentations.each do |p|%>
+      <tr>
+        <td>
+          <%= render :partial => "vote_count", :locals => { :presentation => p, :can_vote => @user_ratings.find{|u| u.presentation == p}.nil?} %>
+        </td>
+        <td><%= link_to p.title, :action => 'show', :id => p %></td>
+        <td><%=format_time(p.start_time)%></td>
+        <td><%=p.location%></td>
+        <td><%=p.level%></td>
+      </tr>
+  <%end%>
+  </tbody>
+</table>
