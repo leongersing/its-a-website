@@ -1,7 +1,10 @@
 class PresentationsController < ApplicationController
+  
+  before_filter :get_user_ratings, :only => [:index, :sort]
+
+  
   def index
     @presentations = Presentation.find(:all)
-    @user_ratings = Rating.find_all_by_user_id(current_user.id)
   end
 
   def vote_up
@@ -14,6 +17,11 @@ class PresentationsController < ApplicationController
   	presentation = Presentation.find(params[:id])
   	presentation.rate_thumbs_down(current_user)
   	redirect_to :action => :index
+  end
+  
+  def sort
+    @presentations = Presentation.find(:all, :order => params[:id]) 
+    render :template => 'presentations/index'
   end
 
   def show
@@ -33,4 +41,11 @@ class PresentationsController < ApplicationController
 
   def destroy
   end
+  
+  private
+  
+  def get_user_ratings
+    @user_ratings = Rating.find_all_by_user_id(current_user.id) 
+  end
+  
 end
