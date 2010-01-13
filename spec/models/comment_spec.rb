@@ -10,11 +10,11 @@ describe Comment do
   end
 
   it "should be a private comment" do
-    @private_comment.is_private?
+    @private_comment.private?
   end
 
   it "should be a public comment" do
-    !@public_comment.is_private?
+    !@public_comment.private?
   end
 
 end
