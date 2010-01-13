@@ -1,5 +1,5 @@
 <div class="presentation">
-  <%#= render :partial => "vote_count", :locals => { :presentation => presentation_co, :can_vote => @user_ratings.find{|u| u.presentation == presentation_co}.nil?} %>
+  <%= render :partial => "vote_count", :locals => { :presentation => presentation_co, :can_vote => @user_ratings.find{|u| u.presentation == presentation_co}.nil?} %>
   <h3><%= presentation_co.title %> ( <%= if presentation_co.category.nil? then "Unknown" else presentation_co.category.title end %> )</h3>
   <p><%= presentation_co.start_time %> @ <%= presentation_co.location %></p>
   <p><strong>Technology/Platform:</strong> <%= presentation_co.technology %></p>
