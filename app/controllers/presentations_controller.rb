@@ -4,6 +4,18 @@ class PresentationsController < ApplicationController
     @user_ratings = Rating.find_all_by_user_id(current_user.id)
   end
 
+  def vote_up
+  	presentation = Presentation.find(params[:id])
+  	presentation.rate_thumbs_up(current_user)
+  	redirect_to :action => :index
+  end
+  
+  def vote_down
+  	presentation = Presentation.find(params[:id])
+  	presentation.rate_thumbs_down(current_user)
+  	redirect_to :action => :index
+  end
+
   def show
     @presentation = Presentation.find(params[:id])
     @user_ratings = Rating.find_all_by_user_id_and_presentation_id(current_user.id, @presentation.id)

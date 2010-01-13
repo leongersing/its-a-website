@@ -1,0 +1,10 @@
+<div class="presentation-detail">
+  <div id="presentation-detail-title"><%= @presentation.title %></div>
+  <div id="presentation-detail-level"><%= @presentation.level %><div>
+  <div id="presentation-detail-location"><%= @presentation.location %></div>
+  <div id="presentation-detail-technology"><%= @presentation.technology %></div>
+  <div id="presentation-detail-catgories"><%= @presentation.categories,join(", ") %> </div>
+  <div id="presentation-detail-presenter">(<%= @presentation.presenters.join(", ") %>)</div>
+  <div id="presentation-detail-when"><%= @presentation.start_time.strftime("%w, %I:%M%p") %> </div>
+  <div id="presentation-detail-description"><%= @presentation.description %></div>
+</div>

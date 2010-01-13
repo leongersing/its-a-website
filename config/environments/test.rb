@@ -28,4 +28,6 @@ config.action_mailer.delivery_method = :test
 # config.active_record.schema_format = :sql
 config.gem 'mocha'
 config.gem "factory_girl", :source => "http://gemcutter.org"
-
+config.gem 'rspec',       :lib => false,        :version => '>=1.2.8' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
+config.gem 'rspec-rails', :lib => false,        :version => '>=1.2.7.1' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
+config.gem 'mocha'
