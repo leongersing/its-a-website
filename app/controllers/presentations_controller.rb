@@ -1,5 +1,6 @@
 class PresentationsController < ApplicationController
   
+  before_filter :require_user
   before_filter :get_user_ratings, :only => [:index, :sort]
 
   
@@ -20,7 +21,11 @@ class PresentationsController < ApplicationController
   end
   
   def sort
-    @presentations = Presentation.find(:all, :order => params[:id]) 
+    if params[:id] == "positive_ratings" || params[:id] == "negative_ratings"
+      @presentations = Presentation.find(:all, :order => "#{params[:id]} DESC"  ) 
+    else
+      @presentations = Presentation.find(:all, :order => params[:id]) 
+    end
     render :template => 'presentations/index'
   end
 
