@@ -20,7 +20,6 @@ describe PresentationsController do
   it "should delete a session" do
     presentation = Presentation.new(:title=>"hello")
     presentation.save!
-    puts presentation.id
     post :destroy, {:id=>presentation.id}
     assert_raise(ActiveRecord::RecordNotFound) do
       Presentation.find(presentation.id) 
