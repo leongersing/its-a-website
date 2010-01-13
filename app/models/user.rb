@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  acts_as_authentic  
-  has_many :ratings
+  acts_as_authentic
   belongs_to :presenter
-  has_many :comments
+  accepts_nested_attributes_for :presenter
+  has_many :ratings
 end
+
