@@ -7,3 +7,4 @@ log/
 db/*.sqlite3
 .eprj
 db/schema.rb
+nbproject/*

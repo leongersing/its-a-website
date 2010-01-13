@@ -1,0 +1,15 @@
+<div class="vote_count">
+  <span class="thumbs_up"><%= presentation.positive_ratings %></span>
+  <% if can_vote then %>
+    <%= link_to image_tag("thumbs_up.png"), :action => :vote_up, :id => presentation %>
+  <% else %>
+    <%= image_tag("thumbs_up.png") %>
+  <% end %>
+  &nbsp;
+  <span class="thumbs_down"><%= presentation.negative_ratings %></span>
+  <% if can_vote then %>
+    <%= link_to image_tag("thumbs_down.png"), :action => :vote_down, :id => presentation %>
+  <% else %>
+    <%= image_tag("thumbs_down.png") %>
+  <% end %>
+</div>

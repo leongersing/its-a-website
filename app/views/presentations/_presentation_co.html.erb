@@ -1,9 +1,10 @@
 <div class="presentation">
-	<h3><%= presentation_co.title %> ( <%= if presentation_co.category.nil? then "Unknown" else presentation_co.category.title end %> )</h3>
-	<p><%= presentation_co.start_time %> @ <%= presentation_co.location %></p>
-	<p><strong>Technology/Platform:</strong> <%= presentation_co.technology %></p>
-	<p><strong>Difficulty Level:</strong> <%= presentation_co.level %></p> 
-	<p><strong>Abstract:</strong> <%= presentation_co.description %></p>
-	<%= link_to "Edit", :action => 'edit', :id => presentation_co %>
-	<%= link_to "Delete", :action => 'delete', :id => presentation_co %>
+  <%= render :partial => "vote_count", :locals => { :presentation => presentation_co, :can_vote => @user_ratings.find{|u| u.presentation == presentation_co}.nil?} %>
+  <h3><%= presentation_co.title %> ( <%= if presentation_co.category.nil? then "Unknown" else presentation_co.category.title end %> )</h3>
+  <p><%= presentation_co.start_time %> @ <%= presentation_co.location %></p>
+  <p><strong>Technology/Platform:</strong> <%= presentation_co.technology %></p>
+  <p><strong>Difficulty Level:</strong> <%= presentation_co.level %></p>
+  <p><strong>Abstract:</strong> <%= presentation_co.description %></p>
+  <%= link_to "Edit", :action => 'edit', :id => presentation_co %>
+  <%= link_to "Delete", :action => 'delete', :id => presentation_co %>
 </div>
