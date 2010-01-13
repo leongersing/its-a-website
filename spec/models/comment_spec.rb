@@ -1,4 +1,4 @@
-require 'spec_helper'
+require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 describe Comment do
   it 'cannot be created without a body, subject or user' do    
