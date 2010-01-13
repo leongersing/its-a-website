@@ -2,11 +2,9 @@
 *-
 *.#*
 .idea/
-
 log/
 .DS_Store
-
 db/*.sqlite3
-
 .eprj
+db/schema.rb
 nbproject/*
