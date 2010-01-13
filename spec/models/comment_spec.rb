@@ -7,12 +7,7 @@ describe "Comment" do
   end
   
   it 'can be created with a body, subject and user' do
-    # mock user and presentation
-    user = User.new
-    user.expects(:save).returns(true)
-    presentation = Presentation.new
-    presentation.expects(:save).returns(true)  
-    comment = Comment.create(:body => "Leon is a knucklehead", :subject => presentation , :user => user )
+    comment = Comment.create(:body => "Leon is a knucklehead", :subject_id => 1 , :subject_type => 'Presentation', :user_id => 16 )
     comment.should be_valid
   end
   

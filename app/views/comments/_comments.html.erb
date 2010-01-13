@@ -1,0 +1,6 @@
+<ol class="comments">
+  <%= render :partial => "comments/comment", :locals => {:presentation => presentation} %>
+  <% comments.each do |comment| %>
+    <li><%= comment.body %></li>
+  <% end %>
+</ol>
