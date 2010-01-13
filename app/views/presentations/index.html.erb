@@ -1,1 +1,12 @@
+<ul id="sort_menu">
+  <li>Sort by:</li>
+  <li><%= link_to 'Title', :action => 'sort', :id => 'title' %></li>
+  <li><%= link_to 'Description', :action => 'sort', :id => 'description' %></li>
+  <li><%= link_to 'Start Time', :action => 'sort', :id => 'start_time' %></li>
+  <li><%= link_to 'Location', :action => 'sort', :id => 'location' %></li>
+  <li><%= link_to 'Level', :action => 'sort', :id => 'level' %></li>
+  <li><%= link_to 'Technology', :action => 'sort', :id => 'technology' %></li>
+  <li><%= link_to 'Positive ratings', :action => 'sort', :id => 'positive_ratings' %></li>
+  <li><%= link_to 'Negative ratings', :action => 'sort', :id => 'negative_ratings' %></li>
+</ul>
 <%= render :partial => "presentation_co", :collection => @presentations %>

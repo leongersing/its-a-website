@@ -24,3 +24,14 @@
   text-decoration:none;
   color:#000;
 }
+
+ul#sort_menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 25px 0;
+}
+
+ul#sort_menu li {
+	display: inline;
+	padding-right: 10px;
+}
