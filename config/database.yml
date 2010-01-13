@@ -1,21 +1,22 @@
-# SQLite version 3.x
-#   gem install sqlite3-ruby (not necessary on OS X Leopard)
-development:
+# MySQL
+development: &DEFAULT
   adapter: mysql
-  database: codemash2010_development
+  encoding: utf8
+  database: precomp_dev
   username: root
   password:
-  host: localhost
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &TEST
-    adapter: mysql
-    database: codemash2010_test
-    username: root
-    password:
-    host: localhost
+  database: precomp_test
+  <<: *DEFAULT
+
+production:
+  database: precomp_prod
+  <<: *DEFAULT
 
 cucumber:
   <<: *TEST

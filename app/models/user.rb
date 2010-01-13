@@ -4,4 +4,3 @@ class User < ActiveRecord::Base
   belongs_to :presenter
   has_many :comments
 end
-
