@@ -27,6 +27,14 @@ class UsersController < ApplicationController
   def update
     @user = @current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
+      if params[:is_presenter][:role] == '1' && !@user.presenter
+        @user.presenter = Presenter.create
+        @user.save
+      elsif params[:is_presenter][:role] == '0' && @user.presenter
+        @user.presenter.destroy
+        @user.presenter = nil
+        @user.save
+      end
       flash[:notice] = "Account updated!"
       redirect_to account_url
     else
