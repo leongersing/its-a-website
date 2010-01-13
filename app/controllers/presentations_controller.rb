@@ -14,12 +14,12 @@ class PresentationsController < ApplicationController
 
   def create
     @presentation = Presentation.new(params[:presentation])
-    @presentation.save
+    @presentation.save!
   end
 
   def update
-    @campground = Presentation.find(params[:id])
-    @campground.update_attributes(params[:campground])
+    @presentation = Presentation.find(params[:id])
+    @presentation.update_attributes(params[:presentation])
   end
 
   def destroy
