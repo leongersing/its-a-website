@@ -18,4 +18,9 @@ describe User do
     @user1.comments << @comment2
     @user1.comments.size.should == 2
   end
+  
+  # it "should be able to see comments available to it based on role" do
+    # @user1.comments_available_to_me.should == 5
+  # end
+  
 end
