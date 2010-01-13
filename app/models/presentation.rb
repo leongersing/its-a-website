@@ -1,11 +1,12 @@
 class Presentation < ActiveRecord::Base
-	belongs_to :category
+  belongs_to :category
   has_many :ratings
   
   def rate_thumbs_up(user)
     if self.ratings.find_all_by_user_id(user).size == 0
       self.ratings.create(:user => user, :thumbs_up => true)
       self.positive_ratings += 1
+      self.save
     end
   end
   
@@ -13,6 +14,7 @@ class Presentation < ActiveRecord::Base
     if self.ratings.find_all_by_user_id(user).size == 0
       self.ratings.create(:user => user, :thumbs_up => false)
       self.negative_ratings += 1
+      self.save
     end
   end
 end
