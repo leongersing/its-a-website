@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th>Reference data</th>
+        <th>Bio</th>
+        <th>Contact Info</th>
+	<th>Blog</th>
+	<th>Twitter</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%@presenters.each do |p|%>
+      <tr>
+        <td><%=p.name%></td>
+        <td><%=p.reference_data%></td>
+        <td><%=p.bio%></td>
+        <td><%=p.contact_info%></td>
+	<td><%=p.blog_url%></td>
+	<td><%=p.twitter_name%></td>
+      </tr>
+  <%end%>
+  </tbody>
+  
+</table>
