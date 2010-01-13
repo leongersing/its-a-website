@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'user'
 
-describe User
+describe User do
   
 end
