@@ -2,6 +2,7 @@
 *-
 *.#*
 .idea/
+tmp/
 log/
 .DS_Store
 db/*.sqlite3
