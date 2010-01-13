@@ -1,12 +1,11 @@
 class PresentationsController < ApplicationController
   
-  before_filter :require_user
+  before_filter :require_user, :only=> [:vote_up, :vote_down]
   before_filter :get_user_ratings, :only => [:index, :sort]
 
   
   def index
     @presentations = Presentation.all
-    #@user_ratings = Rating.find_all_by_user_id(current_user.id)
   end
 
   def vote_up
