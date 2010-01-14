@@ -5,4 +5,5 @@
   <p><strong>Technology/Platform:</strong> <%= presentation.technology %></p>
   <p><strong>Difficulty Level:</strong> <%= presentation.level %></p>
   <p><strong>Abstract:</strong> <%= presentation.description %></p>
+  <%= render :partial => "comments/comments", :locals => {:comments => presentation.comments, :subject => presentation }%>
 </div>

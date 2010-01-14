@@ -5,11 +5,13 @@ class CommentsController < ApplicationController
       flash[:error] = 'Please login to comment.'
       redirect_to :root
     else
-      if params[:comment] && params[:comment][:subject_type] && params[:comment][:subject_id] && params[:comment][:body]
-        comment = Comment.create(:subject_type => params[:comment][:subject_type], :subject_id => params[:comment][:subject_id], :user_id => current_user.id, :body => params[:comment][:body] )
-        flash[:success] = 'Comment created!' #if comment.valid?
+      params[:comment][:user_id] = current_user.id if params.has_key?(:comment)
+      comment = Comment.create(params[:comment])
+      if comment.valid?
+        flash[:success] = 'Comment created!'
+      else
+        flash[:error] = 'Comment not created'
       end
-      flash[:error] = 'Comment not created' unless (comment && comment.valid?)
       redirect_to :back
     end
       

@@ -1,6 +1,9 @@
-<ol class="comments">
-  <%= render :partial => "comments/comment", :locals => {:presentation => presentation} %>
-  <% comments.each do |comment| %>
-    <li><%= comment.body %></li>
-  <% end %>
-</ol>
+<div class="comments">
+  <h5>Comments</h5>
+  <ul>
+    <% comments.each do |comment| %>
+      <li><%= time_ago_in_words(comment.created_at) %> ago, <%= comment.user.login %> said: <%= comment.body %> </li>
+    <% end %>
+  </ul>
+  <%= render :partial => "comments/comment", :locals => {:subject => subject} %>
+</div>

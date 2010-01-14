@@ -1,12 +1,12 @@
-<% if !current_user %>
-  <h1>Add Comment</h1>
+<% if current_user %>
+  <b>New Comment</b>
   <% semantic_form_for Comment.new do |f| %>
     <% f.inputs do %>
-      <%= f.input :body %>
-      <input type="hidden" name="comment[subject_type]" id="comment_subject_type" value="<%= presentation.class.name %>" />
-      <input type="hidden" name="comment[subject_id]" id="comment_subject_id" value="<%= presentation.id %>" />
+      <%= f.input :body, :label => false, :input_html => { :rows => 2, :cols => 10 } %>
+      <%= f.input :subject_type, :as => :hidden, :input_html => {:value => subject.class.name}, :wrapper_html => { :style => "display:none;" } %>
+      <%= f.input :subject_id, :as => :hidden, :input_html => {:value => subject.id}, :wrapper_html => { :style => "display:none;" } %>
+      <input type="submit" value="Add Comment" />
     <% end %>
-    <%= f.buttons %>
   <% end %>
 <% else %>
   You must be logged in comment
