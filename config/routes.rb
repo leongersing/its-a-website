@@ -1,18 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :conferences
 
-  map.resources :conferences
-
-  map.resources :conferences
-
-  map.resources :conferences
-
   # The priority is based upon order of creation: first created -> highest priority.
   map.resource :user_session
   map.resource :account, :controller => "users"
   map.resources :users
   map.resources :presentations
   map.resources :comments
+  map.resources :presenters
   map.root :controller => "user_sessions", :action => "new"
   map.logout "/logout", :controller=> "user_sessions", :action=>"destroy"
   map.login "/login", :controller => "user_sessions", :action=>"new"
