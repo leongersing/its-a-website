@@ -1,6 +1,6 @@
 class PresentationsController < ApplicationController
   
-  before_filter :require_user, :only=> [:vote_up, :vote_down]
+  before_filter :require_user, :only=> [:index, :vote_up, :vote_down]
   before_filter :get_user_ratings, :only => [:index, :sort]
 
   

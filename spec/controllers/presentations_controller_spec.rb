@@ -28,11 +28,10 @@ describe PresentationsController do
 
   it "should list sessions" do
     Presentation.expects(:all).returns([])
-    user = Factory(:user)
-    user_session = UserSession.create(user)
+    @controller.stubs(:current_user).returns(Factory(:user))
     get :index
     #i should check an instance var @presentations returns an empty array
-    assigns[:presentations].should == [] 
+    assigns[:presentations].should be_blank
   end
 end
 
