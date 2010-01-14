@@ -5,7 +5,7 @@
   <p><strong>Technology/Platform:</strong> <%= presentation_co.technology %></p>
   <p><strong>Difficulty Level:</strong> <%= presentation_co.level %></p>
   <p><strong>Abstract:</strong> <%= presentation_co.description %></p>
-  <%= render :partial => "comments/comments", :locals => {:comments => presentation_co.comments, :presentation => presentation_co }%>
   <%= link_to "Edit", :action => 'edit', :id => presentation_co %>
   <%= link_to "Delete", :action => 'delete', :id => presentation_co %>
+  <%= render :partial => "comments/comments", :locals => {:comments => presentation_co.comments, :subject => presentation_co }%>
 </div>
