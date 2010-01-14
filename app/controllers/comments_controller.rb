@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
       flash[:error] = 'Please login to comment.'
       redirect_to :root
     else
-      params[:comment][:user_id] = current_user.id
+      params[:comment][:user_id] = current_user.id if params.has_key?(:comment)
       comment = Comment.create(params[:comment])
       if comment.valid?
         flash[:success] = 'Comment created!'
