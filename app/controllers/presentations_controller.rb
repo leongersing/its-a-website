@@ -30,6 +30,8 @@ class PresentationsController < ApplicationController
   end
 
   def show
+    @presentation = Presentation.find(params[:id])
+    @user_ratings = Rating.find_all_by_user_id_and_presentation_id(current_user.id, @presentation.id)
   end
 
   def new

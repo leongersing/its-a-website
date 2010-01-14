@@ -1,0 +1,5 @@
+<% if current_user.has_role?("organizer") then %>
+  <%= render :partial => "presentation_co", :object => @presentation %>
+<% else %>
+  <%= render :partial => "presentation", :object => @presentation %>
+<% end %>
