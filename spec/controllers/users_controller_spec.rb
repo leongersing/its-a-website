@@ -20,7 +20,7 @@ describe UsersController do
     user = User.new(:login => 'test', :password => 'test1234', :password_confirmation => 'test1234', :email => 'test@test.com')
     user.save!
     UserSession.create user
-    post :update, {:id => user.id, :is_presenter => {:role => '1'}}
+    post :update, {:id => user.id, :is_presenter => {:role => '1'}, :presenter => {}}
     user.reload
     user.presenter.should be_an_instance_of Presenter
   end
@@ -34,6 +34,28 @@ describe UsersController do
     user.reload
     user.presenter.should == nil
   end
+
+  it 'should be able to mark a user as a presenter with properties' do
+    user = User.new(:login => 'test', :password => 'test1234', :password_confirmation => 'test1234', :email => 'test@test.com')
+    user.save!
+    UserSession.create user
+    post :update, {:id => user.id, :is_presenter => {:role => '1'}, :presenter => {:name => 'Tester'}}
+    user.reload
+    user.presenter.should be_an_instance_of Presenter
+    user.presenter.name.should == "Tester"
+  end
+
+  it 'should be able to update a user who is already a presenter with new properties' do
+    user = User.new(:login => 'test', :password => 'test1234', :password_confirmation => 'test1234', :email => 'test@test.com')
+    user.presenter = Presenter.create!(:name => 'Tester')
+    user.save!
+    UserSession.create user
+    post :update, {:id => user.id, :is_presenter => {:role => '1'}, :presenter => {:name => 'Big Tester'}}
+    user.reload
+    user.presenter.should be_an_instance_of Presenter
+    user.presenter.name.should == "Big Tester"
+  end
+
 
 end
 
