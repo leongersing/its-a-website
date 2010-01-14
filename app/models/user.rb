@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
-  acts_as_authentic  
-  has_many :ratings
+  acts_as_authentic
   belongs_to :presenter
   has_many :comments
+  accepts_nested_attributes_for :presenter
+  has_many :ratings
+  
   
   # SEE http://railscasts.com/episodes/189-embedded-association for info
   # about how roles are implemented.
