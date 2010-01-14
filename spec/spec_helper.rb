@@ -5,6 +5,12 @@ require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environ
 require 'spec/autorun'
 require 'spec/rails'
 
+# Require FactoryGirl and factories
+require 'factory_girl'
+Dir.glob("#{RAILS_ROOT}/spec/factories/*.rb").each {|f| require f }
+
+
+
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'
 
