@@ -1,9 +1,6 @@
-class GeneratePresenterUsers < ActiveRecord::Migration
-  
+class GeneratePresenterProfileUsers < ActiveRecord::Migration
   def self.up
-    add_column :presenters, :user_id, :integer
-    
-    Presenter.all.each do |p|
+    PresenterProfile.all.each do |p|
       l = p.name.downcase.gsub(/[^a-z0-9]/, '')
       user = User.new(:login => l, :email => 'foo@bar.com', 
         :password => "password", :password_confirmation => "password")
@@ -19,6 +16,5 @@ class GeneratePresenterUsers < ActiveRecord::Migration
         u.destroy
       end
     end
-    remove_column :presenters, :user_id      
   end
 end
