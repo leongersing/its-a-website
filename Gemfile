@@ -6,7 +6,6 @@ gem "twitter"
 gem "jrails"
 gem "authlogic"
 gem "formtastic"
-gem "sqlite3-ruby", :require_as => 'sqlite3'
 
 only :test do
   gem "rspec", :require_as => "spec"
