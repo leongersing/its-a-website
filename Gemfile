@@ -12,6 +12,7 @@ only :test do
   gem "rspec-rails", :require_as => nil
   gem "mocha"
   gem "factory_girl"
+  gem "remarkable_rails"
 end
 
 disable_system_gems
