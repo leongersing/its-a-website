@@ -10,6 +10,6 @@
 <%= form.label :password_confirmation %><br />
 <%= form.password_field :password_confirmation %><br />
 <br/>
-Are you a presenter?
-<%= check_box(:is_presenter, 'role', { :checked => !@user.presenter.nil? }) %><br/>
+<%= form.label :presenter %><br/>
+<%= check_box(:is_presenter, 'role', { :checked => !@user.presenter_profile.nil? }) %><br/>
 <br/>
