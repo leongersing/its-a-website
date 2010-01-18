@@ -9,4 +9,8 @@
   <li><%= link_to 'Positive ratings', :action => 'sort', :id => 'positive_ratings' %></li>
   <li><%= link_to 'Negative ratings', :action => 'sort', :id => 'negative_ratings' %></li>
 </ul>
-<%= render :partial => "presentation_co", :collection => @presentations %>
+<% @presentations.each do | preso | -%>
+  <%= link_to preso.title, presentation_path(preso) %> 
+  (<%= pluralize preso.positive_ratings, "point" -%>) 
+  and (<%= pluralize preso.comments.count, "comment" -%>) <br />
+<% end -%>
