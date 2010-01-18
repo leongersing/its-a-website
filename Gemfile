@@ -1,10 +1,10 @@
 bundle_path "vendor/bundler_gems"
 source "http://gems.github.com"
 
+gem "authlogic"
 gem "facebooker"
 gem "twitter"
 gem "jrails"
-gem "authlogic"
 gem "formtastic"
 
 only :test do
