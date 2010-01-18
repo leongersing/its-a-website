@@ -15,4 +15,3 @@ only :test do
   gem "remarkable_rails"
 end
 
-disable_system_gems
