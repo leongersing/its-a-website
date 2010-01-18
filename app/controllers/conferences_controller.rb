@@ -1,5 +1,6 @@
 class ConferencesController < ApplicationController
-  # GET /conferences
+  before_filter :require_user, :only => [:new, :create, :edit, :update]
+p  # GET /conferences
   # GET /conferences.xml
   def index
     @conferences = Conference.all
