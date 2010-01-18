@@ -3,7 +3,7 @@ class CreatePresenterProfiles < ActiveRecord::Migration
     create_table :presenter_profiles do |t|
       t.string :name
       t.string :reference_data
-      t.string :bio
+      t.text :bio
       t.string :contact_info
       t.string :blog_url
       t.string :twitter_name
