@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :presentations
   map.resources :comments
   map.resources :presenters
-  map.root :controller => "user_sessions", :action => "new"
+  map.root :controller => "presentations", :action => "index"
   map.logout "/logout", :controller=> "user_sessions", :action=>"destroy"
   map.login "/login", :controller => "user_sessions", :action=>"new"
   map.signup "/signup", :controller=> "users", :action=>"new"
