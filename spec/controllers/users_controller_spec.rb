@@ -26,7 +26,7 @@ describe UsersController do
 
   it 'should be able to unmark a user as a presenter' do
     user = User.new(:login => 'test', :password => 'test1234', :password_confirmation => 'test1234', :email => 'test@test.com')
-    user.presenter = PresenterProfile.create!
+    user.presenter_profile = PresenterProfile.create!
     user.save!
     UserSession.create user
     post :update, {:id => user.id, :is_presenter => {:role => '0'}}

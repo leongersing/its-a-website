@@ -33,7 +33,7 @@ class UsersController < ApplicationController
         if @user.presenter_profile
           @user.presenter_profile.update_attributes(params[:presenter])
         else
-          @user.presenter_profile.create(params[:presenter])
+          @user.create_presenter_profile(params[:presenter])
           @user.save
         end          
       elsif params[:is_presenter][:role] == '0' && @user.presenter_profile
