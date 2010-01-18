@@ -40,5 +40,5 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 require "#{RAILS_ROOT}/vendor/bundler_gems/environment"
-Bundler.require_env RAILS_ENV
+
   
