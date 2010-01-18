@@ -2,6 +2,7 @@ class Presentation < ActiveRecord::Base
   belongs_to :category
   has_many :ratings
   has_many :comments, :as => :subject, :dependent => :destroy
+  has_and_belongs_to_many :presenters, :class_name=>"PresenterProfile"
   
   def rate_thumbs_up(user)
     rating = self.ratings.new(:user => user, :thumbs_up => true)

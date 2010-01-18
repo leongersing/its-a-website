@@ -20,7 +20,7 @@ def clean_date(date)
 end
 
 CodeMashImporter.get("http://codemash.org/rest/speakers.json").each do |s|
-  Presenter.create(:name            => s["Name"],
+  PresenterProfile.create(:name            => s["Name"],
                    :reference_data  => s["SpeakerURI"],
                    :bio             => s["Biography"],
                    :contact_info    => s["ContactInfo"],
@@ -39,7 +39,7 @@ CodeMashImporter.get("http://codemash.org/rest/sessions.json").each do |s|
                           :category         =>  Category.find_or_create_by_title(s["Track"]),
                           :reference_data   =>  s["URI"])
                           
-  speaker = Presenter.find_by_name(s["SpeakerName"])
+  speaker = PresenterProfile.find_by_name(s["SpeakerName"])
   p.presenters << speaker unless speaker.blank?
   p.save!
 end
