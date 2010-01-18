@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       if params[:is_presenter][:role] == '1'
-        @user.presenter_profile.create(params[:presenter])
+        @user.create_presenter_profile(params[:presenter])
         @user.save
       end          
       flash[:notice] = "Account registered!"
