@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   has_one :presenter_profile
   has_many :comments
   has_many :ratings
-  
-  
+  has_many :conferences
+ 
   # SEE http://railscasts.com/episodes/189-embedded-association for info
   # about how roles are implemented.
   
@@ -30,5 +30,9 @@ class User < ActiveRecord::Base
   # symbolize roles
   def role_symbols
     roles.map(&:to_sym)
+  end
+  
+  def conference_organizer?
+    conferences.any?
   end
 end

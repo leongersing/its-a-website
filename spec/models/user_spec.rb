@@ -1,6 +1,38 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 describe User do
+  it { should respond_to :conferences }
+end
+
+describe User do
+  subject { Factory.create(:user) }
+
+  it "should initially not have any conferences" do
+    subject.conferences.should == []
+  end
+
+  it "should be able to add a conference" do
+    subject.conferences << Factory.create(:conference)
+    subject.conferences.size.should == 1
+  end
+end
+
+describe User do
+  describe "with no conferences" do
+    it { should_not be_conference_organizer } 
+  end
+  
+  describe "with a conference" do
+    subject do
+      u = Factory.create(:user)
+      u.conferences << Factory.create(:conference)
+      u
+    end
+    it { should be_conference_organizer }
+  end
+end
+
+describe User do
   before(:each) do
     @user1 = User.new
     @user2 = User.new
@@ -83,3 +115,4 @@ describe "User role class methods" do
     attendees.should include(speaker_attendee)
   end
 end
+

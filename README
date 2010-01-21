@@ -1,2 +1,26 @@
-launch doc/app/index.html in your browser to learn what this application has
-in store for you! :) 
+Initial Setup
+
+1. Install the bundler gem
+
+gem install bundler
+
+2. Run gem bundle in the application root
+
+gem bundle
+
+3. Set up a database.yml
+
+4. create/migrate your databases
+
+5. Start up the app
+
+
+
+Debian/Ubuntu Notes
+====================
+
+If you start up the server and get the following error:
+  no such file to load -- net/https (RuntimeError)
+Install the following package:
+  sudo apt-get install libopenssl-ruby
+
