@@ -1,7 +1,12 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 describe User do
-  it { should have_many :conferences }
+  context "Associations" do
+    it { should have_one :presenter_profile }
+    it { should have_many :comments }
+    it { should have_many :ratings }
+    it { should have_many :conferences }
+  end
 end
 
 describe User do

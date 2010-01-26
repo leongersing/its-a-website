@@ -1,6 +1,15 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 describe Comment do
+  context "Associations" do
+    it { should belong_to :subject, :polymorphic => true }
+    it { should belong_to :user }
+  end
+
+  context "Validations" do
+    it { should validate_presence_of :body, :user_id, :subject_id, :subject_type }
+  end
+
   it 'cannot be created without a body, subject or user' do    
       comment = Comment.create
       comment.should_not be_valid
@@ -10,7 +19,6 @@ describe Comment do
     comment = Comment.create(:body => "Leon is a knucklehead", :subject_id => 1 , :subject_type => 'Presentation', :user_id => 16 )
     comment.should be_valid
   end
-
 
   it "should be a private comment" do
     @private_comment = Comment.new
