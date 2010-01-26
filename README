@@ -2,7 +2,7 @@ Initial Setup
 
 1. Install the bundler gem
 
-gem install bundler
+sudo gem install bundler
 
 2. Run gem bundle in the application root
 

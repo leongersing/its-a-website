@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
 describe User do
-  it { should respond_to :conferences }
+  it { should have_many :conferences }
 end
 
 describe User do
