@@ -1,15 +1,16 @@
-bundle_path "vendor/bundler_gems"
-source "http://gems.github.com"
+source "http://gemcutter.org"
+source "http://rubygems.org"
 
-gem "authlogic"
+gem "rails"
+gem "devise"
 gem "facebooker"
 gem "twitter"
 gem "jrails"
 gem "formtastic"
 
-only :test do
-  gem "rspec", :require_as => "spec"
-  gem "rspec-rails", :require_as => nil
+group :test do
+  gem "rspec", :require => "spec"
+  gem "rspec-rails", :require => nil
   gem "mocha"
   gem "factory_girl"
   gem "remarkable_rails"
