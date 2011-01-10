@@ -6,5 +6,6 @@ gem 'unicorn'
 gem 'omniauth'
 
 group :development, :test do
+  gem 'sqlite3-ruby'
   gem 'rspec'
 end
