@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
       @current_user = user
       session[:user_id] = user.id
     end
-    
+
     def check_authorization
-        redirect_to '/auth/twitter?return_to=' << request.request_uri unless signed_in?
+      redirect_to '/auth/twitter?return_to=' << request.request_uri unless signed_in?
     end
 end
