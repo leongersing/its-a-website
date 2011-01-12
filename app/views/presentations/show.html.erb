@@ -1,1 +1,5 @@
-Presentation: <%= @presentation.name %>
+<p><%= flash[:success] if flash[:success] %></p>
+<p>Presentation: <%= @presentation.name %></p>
+<p><%= link_to 'Edit', edit_presentation_path(@presentation)  %></p>
+<p><%= link_to 'Kill It', presentation_path(@presentation), :confirm => "really??", :method => :delete  %></p>
+
