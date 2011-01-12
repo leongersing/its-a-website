@@ -8,4 +8,5 @@ Precomp2011::Application.routes.draw do
 
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/sessions/destroy', :to => 'sessions#destroy'
+  root :to => "presentations#index"
 end
