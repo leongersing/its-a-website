@@ -1,1 +1,9 @@
-Presentation: <%= @presentation.name %>
+<p><%= flash[:success] if flash[:success] %></p>
+<p>Presentation: <%= @presentation.name %></p>
+<p><%= link_to 'Edit', edit_presentation_path(@presentation)  %></p>
+<p><%= link_to 'Kill It', presentation_path(@presentation), :confirm => "really??", :method => :delete  %></p>
+Questions:<br/>
+<% @presentation.presentation_questions.each do |question| %>
+	<p><%= question.user.name %> asks: <%= question.text %></p>
+<% end %><br/>
+<%= link_to "Ask a question", :controller => "presentation_questions", :action => "new", :presentation_id => @presentation.id %>
