@@ -1,4 +1,7 @@
 <%= link_to "all presentations", presentations_path %>
+<div>
+  Filter: <input type="text" id='FilterPresentationTextbox' />
+</div>
 <div class='presentation_list'>
   <ul>
     <% @presentations.each do |presentation| %>
