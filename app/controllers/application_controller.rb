@@ -17,4 +17,7 @@ class ApplicationController < ActionController::Base
       @current_user = user
       session[:user_id] = user.id
     end
+
+    def check_authorization
+    end
 end
