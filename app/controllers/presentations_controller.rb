@@ -4,7 +4,7 @@ class PresentationsController < ApplicationController
   end
 
   def create
-    @presentation = Presentation.build(params[:presentation])
+    @presentation = Presentation.new(params[:presentation])
     if(@presentation.save)
       flash[:success] = "Presentation '#{@presentation.name}' created!"
       redirect_to presentation_path(@presentation)
@@ -33,6 +33,10 @@ class PresentationsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy 
+    @presentation = Presentation.find(params[:id])
+    @presentation.destroy
+    flash[:success] = "Presentation #{@presentation.name} has been removed with extreme prejudice"
+    redirect_to presentations_path
   end
 end
