@@ -1,6 +1,11 @@
 <%= link_to "all presentations", presentations_path %>
 <div>
-  Filter: <input type="text" id='FilterPresentationTextbox' />
+  Filter: <input type="text" id='FilterPresentationTextbox' /> &nbsp; &nbsp; 
+  Sort: <select id="PresentationSort">
+          <option value="title">Title</option>
+          <option value="start">Start Date</option>
+          <option value="presenter">Presenter</option>
+        </select>
 </div>
 <div class='presentation_list'>
   <ul>
@@ -16,7 +21,11 @@
   </ul>
 </div>
 <script type="text/javascript">
-  $(document).ready(function() {   
+  $(document).ready(function() {  
+    $('select#PresentationSort').change(function(){ 
+        alert("Hello, i'm changing the sort")
+      });
+     
     $('input#FilterPresentationTextbox').bind('change keyup', function() {
       var searchValue = $(this).val().trim();
       
@@ -26,8 +35,8 @@
           return;          
         }
       
-      $('li').not(":Contains('"+$(this).val()+"')'").hide('slow');
-      $('li:Contains("'+$(this).val()+'")').show('slow');
+      $('li').not(":contains('"+$(this).val()+"')'").hide('slow');
+      $('li:contains("'+$(this).val()+'")').show('slow');
       
     });
   });
