@@ -1,1 +1,22 @@
 <%= link_to "all presentations", presentations_path %>
+
+<div>
+  <table>
+    <tr>
+      <td>View</td>
+      <td>Name</td>
+      <td>When</td>
+      <td>Speaker</td>
+    </tr>
+  
+    <% @presentations.each do |presentation| %>
+      <tr>
+        <td><%= link_to "view", presentation %></td>
+        <td><%= presentation.name %></td>
+        <td><%= presentation.starts_at.to_s(:long) %></td>
+        <td><%= presentation.speaker_name %></td>
+      </tr>
+    <% end %>
+  
+  </table>
+</div>
