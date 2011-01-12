@@ -5,7 +5,7 @@
 <div class='presentation_list'>
   <ul>
     <% @presentations.each do |presentation| %>
-      <li>
+      <li data-FilterText='<%= presentation.name %>'>
         <div class='presentation'>
             <%= link_to presentation.name, presentation %><br/>
             Start: <%= presentation.starts_at.to_s(:long) %><br/>
@@ -15,3 +15,12 @@
     <% end %>
   </ul>
 </div>
+<script type="text/javascript">
+  $(document).ready(function() {   
+    $('input#FilterPresentationTextbox').bind('change keyup', function() {
+      $('li').not(":contains('"+$(this).val()+"')'").hide('slow');
+      $('li:contains("'+$(this).val()+'")').show('slow');
+      
+    });
+  });
+</script>
