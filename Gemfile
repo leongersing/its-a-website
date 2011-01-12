@@ -4,6 +4,7 @@ source 'http://gemcutter.org'
 gem 'rails', '3.0.3'
 gem 'unicorn'
 gem 'omniauth'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'sqlite3-ruby'

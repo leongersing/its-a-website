@@ -40,6 +40,9 @@ GEM
       multipart-post (~> 1.0.1)
       rack (>= 1.1.0, < 2)
     i18n (0.5.0)
+    jquery-rails (0.2.6)
+      rails (~> 3.0)
+      thor (~> 0.14.4)
     kgio (2.1.1)
     mail (2.2.14)
       activesupport (>= 2.3.6)
@@ -135,6 +138,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jquery-rails
   omniauth
   rails (= 3.0.3)
   rspec
