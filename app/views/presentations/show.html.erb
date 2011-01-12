@@ -1,1 +1,6 @@
-Presentation: <%= @presentation.name %>
+Presentation: <%= @presentation.name %><br/>
+Questions:<br/>
+<% @presentation.presentation_questions.each do |question| %>
+	<p><%= question.user.name %> asks: <%= question.text %></p>
+<% end %><br/>
+<%= link_to "Ask a question", :controller => "presentation_questions", :action => "new", :presentation_id => @presentation.id %>
