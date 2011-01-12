@@ -1,21 +1,3 @@
-Requirements:
-
-  STORY FORMAT: 
-    As a <role>
-    I would like to <action>
-    So that I may <value>
-
-    As a conference attendee
-    I would like to view a list of presentations
-    So that I may plan my day at the conf.
-
-    As an admin
-    I would like to provide a list of presentations
-    So that I may describe the schedule for conference
-    attendees and staff
-
-
-
 I'm leaving the Rails message below for those new to rails. 
 
 Hello! this is a boiler-plate branch for the "It's a Website!" precompiler event
