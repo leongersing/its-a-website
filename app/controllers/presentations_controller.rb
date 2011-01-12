@@ -6,7 +6,7 @@ class PresentationsController < ApplicationController
   def create
     @presentation = Presentation.build(params[:presentation])
     if(@presentation.save)
-      flash[:success] = "Presentation '#{@presentation}' created!"
+      flash[:success] = "Presentation '#{@presentation.name}' created!"
       redirect_to presentation_path(@presentation)
     else 
       flash[:error] = "FAIL!<br>#{@presentation.errors.full_messages.join("<br>")}"
@@ -25,7 +25,7 @@ class PresentationsController < ApplicationController
   def update
     @presentation = Presentation.find(params[:id])
     if @presentation.update_attributes(params[:presentation])
-      flash[:success] = "Presentation '#{@presentation}' updated!"
+      flash[:success] = "Presentation '#{@presentation.name}' updated!"
       redirect_to presentation_path(@presentation)
     else
       flash[:error] = "FAIL!<br>#{@presentation.errors.full_messages.join("<br>")}"
