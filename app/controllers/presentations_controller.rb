@@ -1,4 +1,8 @@
 class PresentationsController < ApplicationController
+  def index
+    @presentations = Presentation.all
+  end
+  
   def new
     @presentation = Presentation.new
   end
