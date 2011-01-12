@@ -18,9 +18,22 @@
 <script type="text/javascript">
   $(document).ready(function() {   
     $('input#FilterPresentationTextbox').bind('change keyup', function() {
-      $('li').not(":contains('"+$(this).val()+"')'").hide('slow');
-      $('li:contains("'+$(this).val()+'")').show('slow');
+      var searchValue = $(this).val().trim();
+      
+      if (searchValue == '')
+        {
+          $('li').show();
+          return;          
+        }
+      
+      $('li').not(":Contains('"+$(this).val()+"')'").hide('slow');
+      $('li:Contains("'+$(this).val()+'")').show('slow');
       
     });
   });
+  
+  $.expr[':'].Contains = function(a, i, m){
+    return $(a).text().toUpperCase().indexOf(m[1].toUpperCase()) >= 0;
+   };
+    
 </script>
