@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+achievements = Achievement.create(:name => "First Timer", :description => "You ranked your first session.")
+achievements = Achievement.create(:name => "Old Timer", :description => "You ranked every session.")
+#achievements = Achievement.create(:name => "Ruby Newbie", :description => "You ranked your first ruby session.")
+#achievements = Achievement.create(:name => "Rubyist", :description => "You ranked every ruby session.")
