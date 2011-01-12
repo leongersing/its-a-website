@@ -1,6 +1,6 @@
 class PresentationsController < ApplicationController
   def index
-    @presentations = Presentation.all
+    @presentations = Presentation.find(:all, :order => "name")
   end
   
   def new

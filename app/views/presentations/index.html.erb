@@ -1,8 +1,19 @@
 <%= link_to "all presentations", presentations_path %>
+<div>
+  Filter: <input type="text" id='FilterPresentationTextbox' /> &nbsp; &nbsp; 
+  Sort: <select id="PresentationSort">
+          <option value="data-title">Title</option>
+          <option value="data-start">Start Date</option>
+          <option value="data-presenter">Presenter</option>
+        </select>
+</div>
+
 <div class='presentation_list'>
   <ul>
     <% @presentations.each do |presentation| %>
-      <li>
+      <li data-title='<%= presentation.name %>'
+          data-start='<%= presentation.starts_at.to_s(:long) %>'
+          data-presenter='<%= presentation.speaker_name%>'>
         <div class='presentation'>
             <%= link_to presentation.name, presentation %><br/>
             Start: <%= presentation.starts_at.to_s(:long) %><br/>
@@ -12,3 +23,4 @@
     <% end %>
   </ul>
 </div>
+
