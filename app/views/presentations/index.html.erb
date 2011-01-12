@@ -7,10 +7,13 @@
           <option value="data-presenter">Presenter</option>
         </select>
 </div>
+
 <div class='presentation_list'>
   <ul>
     <% @presentations.each do |presentation| %>
-      <li data-title='<%= presentation.name %>' data-start='' data-presenter='<%= presentation.speaker_name%>'>
+      <li data-title='<%= presentation.name %>'
+          data-start='<%= presentation.starts_at.to_s(:long) %>'
+          data-presenter='<%= presentation.speaker_name%>'>
         <div class='presentation'>
             <%= link_to presentation.name, presentation %><br/>
             Start: <%= presentation.starts_at.to_s(:long) %><br/>
@@ -20,47 +23,4 @@
     <% end %>
   </ul>
 </div>
-<script type="text/javascript">
-  $(document).ready(function() {  
-    $('select#PresentationSort').change(function(){ 
-        sortUl($(this).val());
-      });
-     
-    $('input#FilterPresentationTextbox').bind('change keyup', function() {
-      var searchValue = $(this).val().trim();
-      
-      if (searchValue == '')
-        {
-          $('li').show();
-          return;          
-        }
-      
-      $('li').not(":contains('" + searchValue + "')'").hide('slow');
-      $('li:contains("' + searchValue + '")').show('slow');  
-    });
-  });
-  
-  $.expr[':'].Contains = function(a, i, m){
-    return $(a).text().toUpperCase().indexOf(m[1].toUpperCase()) >= 0;
-   };
-   
-   function sortUl(sortColumn){
-     var mylist = $("ul");
-     
-     var listItems = mylist.children('li').get();
-     
-     listItems.sort(function(a, b){
-        
-        var compA = $(a).attr(sortColumn).toUpperCase();
-        var compB = $(b).attr(sortColumn).toUpperCase();
-        
-        return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
-      });
-     
-     $.each(listItems, function(idx, itm){ mylist.append(itm); });
-     
-     
-     alert(sortColumn);
-   }
-    
-</script>
+
