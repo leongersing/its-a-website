@@ -5,12 +5,12 @@ class PresentationQuestionsController < ApplicationController
     @question = @presentation.presentation_questions.new(params[:presentation_question])
     @question.user = @current_user
     if @question.save
-      redirect_to :action => "show", :controller => "presentations", :id => params[:presentation_id]
+      redirect_to presentation_path(@presentation)
     else
       render :action => "show"
     end
   end
-  
+
   def load_presentation
     @presentation = Presentation.find_by_id params[:presentation_id]
   end

@@ -9,7 +9,12 @@ class SessionsController < ApplicationController
     #render :text => "Welcome, #{current_user.name}."
     redirect_to params[:return_to]
   end
-  
+
+  def create_by_name
+    self.current_user = User.find_by_name(params[:name])
+    redirect_to root_url
+  end
+
   def destroy
     session[:user_id] = nil
     redirect_to :controller => "presentations"

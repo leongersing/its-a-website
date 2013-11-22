@@ -9,6 +9,7 @@
 .rvmrc
 bin/
 config/database.yml
+config/setup_load_paths.rb
 db/*.sqlite3
 db/schema.rb
 log/

@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Precomp2011</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :all %>
+  <%= javascript_include_tag 'jquery.min', 'rails', 'application' %>
+  <%= javascript_include_tag "views/#{controller.controller_name}/#{controller.action_name}" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
